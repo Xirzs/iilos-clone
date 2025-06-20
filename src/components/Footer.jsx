@@ -7,7 +7,7 @@ const Footer = () => {
     <footer className="bg-black text-white py-10">
       <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
         <div>
-          <h1 className="text-2xl font-bold text-[#00FFFF] mb-3">Iilos</h1>
+          <h1 className="text-2xl font-bold text-[#00FFFF] mb-3">React</h1>
           <p className="text-gray-400 text-sm">
             Empowering students to explore international education through
             guidance and global opportunities.

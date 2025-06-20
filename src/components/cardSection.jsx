@@ -52,21 +52,22 @@ const cards = [
 const CardSection = () => {
   return (
     <section className="py-16 bg-white">
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
           What We Offer
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {cards.map((card, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.2, duration: 0.6 }}
+              transition={{ delay: index * 0.1, duration: 0.6 }}
               viewport={{ once: true }}
-              className="bg-gray-100 rounded-lg p-6 shadow-md hover:shadow-xl transition-all duration-300"
+              className="bg-gray-100 rounded-lg p-6 shadow-md hover:shadow-xl transition-all duration-300 text-center break-words"
             >
-              <div className="mb-4">{card.icon}</div>
+              <div className="mb-4 flex justify-center">{card.icon}</div>
               <h3 className="text-xl font-semibold text-gray-800 mb-2">
                 {card.title}
               </h3>
