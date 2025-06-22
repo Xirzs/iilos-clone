@@ -33,15 +33,16 @@ const Navbar = () => {
       initial={{ y: 0 }}
       animate={{ y: showNavbar ? 0 : -100 }}
       transition={{ duration: 0.3 }}
-      className="bg-black shadow-md fixed top-0 left-0 w-full z-50"
+      className="bg-black h-20 shadow-md fixed top-0 left-0 w-full z-50"
     >
-      <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-        <Link to="/" className=" font-bold text-2xl text-[#00FFFF] ">
+      <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+        {/* Left: Logo */}
+        <Link to="/" className="font-bold text-2xl text-[#00FFFF]">
           REACT.
         </Link>
 
-        {/* Desktop Nav */}
-        <div className="hidden md:flex space-x-8 items-center">
+        {/* Center: Nav Links */}
+        <div className="hidden md:flex space-x-8 flex-1 justify-center">
           {navLinks.map((link) => (
             <Link
               key={link.name}
@@ -54,6 +55,16 @@ const Navbar = () => {
               <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-[#00b5ca] transition-all duration-300 group-hover:w-full"></span>
             </Link>
           ))}
+        </div>
+
+        {/* Right: CTA Button */}
+        <div className="hidden md:block">
+          <Link
+            to="/contact"
+            className="font-montserrat bg-[#00FFFF] text-black font-semibold px-5 py-2 rounded-md hover:bg-[#00b5ca] transition-colors duration-300"
+          >
+            Contact
+          </Link>
         </div>
 
         <button

@@ -1,40 +1,53 @@
 import { motion } from "framer-motion";
+import Button from "../../ui/components/Button";
+
+// physics for the animation
+const spring = {
+  type: "spring",
+  stiffness: 500,
+  damping: 20,
+};
 
 const Hero = () => {
   return (
     <section
-      className="relative min-h-screen min-w-screen flex flex-col items-center justify-center mt-24 bg-cover bg-center"
+      className="w-full relative min-h-[calc(100vh-96px)]  flex flex-col items-center justify-center bg-cover bg-center "
       style={{ backgroundImage: "url('/images/hero.jpg')" }}
     >
-      <div className=" p-6 rounded-md text-center space-y-6 max-w-2xl z-10">
-        <motion.h1
-          initial={{ x: -80, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 1 }}
-          className="text-4xl md:text-6xl font-bold text-gray-900 leading-tight"
-        >
-          Welcome to <span className="text-brand ">Iilos</span>
-        </motion.h1>
+      <div className="px-4 md:px-6 lg:px-8 w-full flex justify-center">
+        <div className="p-6 rounded-md text-center space-y-6 max-w-2xl z-10">
+          {/* Heading */}
+          <motion.h1
+            initial={{ opacity: 0, transform: "translate3d(-60px, 0, 0)" }}
+            animate={{ opacity: 1, transform: "translate3d(0, 0, 0)" }}
+            transition={{ ...spring }}
+            className="font-manrope text-4xl md:text-6xl font-bold text-gray-900 leading-tight"
+          >
+            Welcome to <span className="text-brand">Iilos</span>
+          </motion.h1>
 
-        <motion.p
-          initial={{ y: -30, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 1, delay: 0.4 }}
-          className="text-lg text-gray-700 max-w-xl mx-auto"
-        >
-          We help students explore global education opportunities and guide them
-          toward a brighter future.
-        </motion.p>
+          {/* Paragraph */}
+          <motion.p
+            initial={{ opacity: 0, transform: "translate3d(0, -40px, 0)" }}
+            animate={{ opacity: 1, transform: "translate3d(0, 0, 0)" }}
+            transition={{ ...spring, delay: 0.2 }}
+            className="font-montserrat text-lg text-gray-700 max-w-xl mx-auto"
+          >
+            We help students explore global education opportunities and guide
+            them toward a brighter future.
+          </motion.p>
 
-        <motion.button
-          initial={{ y: -20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 1, delay: 0.8 }}
-          whileHover={{ scale: 1.05 }}
-          className="px-6 py-3 bg-brand text-white font-medium rounded-md hover:bg-brand-dark transition"
-        >
-          Get Started
-        </motion.button>
+          {/* Button */}
+          <Button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            label="Get Started"
+            variant="primary"
+            size="md"
+            onClick={() => console.log("Clicked!")}
+            animate={true}
+          />
+        </div>
       </div>
     </section>
   );
