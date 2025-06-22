@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { motion } from "framer-motion";
+import Button from "../ui/components/Button";
 
 const Contact = () => {
   const form = useRef();
@@ -33,7 +34,7 @@ const Contact = () => {
 
   return (
     <section className="min-h-screen pt-28 pb-16 px-4 md:px-20 bg-white">
-      <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-10 text-center">
+      <h2 className="font-manrope text-3xl md:text-4xl font-bold text-gray-800 mb-10 text-center">
         Get in Touch
       </h2>
 
@@ -74,14 +75,15 @@ const Contact = () => {
               />
             </div>
 
-            <motion.button
-              type="submit"
+            <Button
               whileHover={{ scale: 1.05 }}
-              className="bg-[#00B5CA] text-white font-medium px-6 py-3 rounded-md shadow-md hover:bg-[#0096ab] transition"
-            >
-              {loading ? "Sending..." : "Send Message"}
-            </motion.button>
-
+              whileTap={{ scale: 0.95 }}
+              label="Get Started"
+              variant="primary"
+              size="md"
+              onClick={() => console.log("Clicked!")}
+              animate={true}
+            />
             {status && (
               <p className="text-sm text-center mt-2 text-green-600 font-medium">
                 {status}

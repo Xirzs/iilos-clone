@@ -17,6 +17,37 @@ const cards = [
     description: "Join a global community of passionate learners.",
     icon: <FaGlobe size={40} className="text-brand" />,
   },
+  {
+    title: "React Development",
+    description: "Master React fundamentals with real-world projects.",
+    icon: <FaReact size={40} className="text-brand" />,
+  },
+  {
+    title: "Expert Mentors",
+    description: "Learn from industry experts and professionals.",
+    icon: <FaChalkboardTeacher size={40} className="text-brand" />,
+  },
+  {
+    title: "Global Reach",
+    description: "Join a global community of passionate learners.",
+    icon: <FaGlobe size={40} className="text-brand" />,
+  },
+  {
+    title: "React Development",
+    description: "Master React fundamentals with real-world projects.",
+    icon: <FaReact size={40} className="text-brand" />,
+  },
+  {
+    title: "Expert Mentors",
+    description: "Learn from industry experts and professionals.",
+    icon: <FaChalkboardTeacher size={40} className="text-brand" />,
+  },
+  {
+    title: "Global Reach",
+    description: "Join a global community of passionate learners.",
+    icon: <FaGlobe size={40} className="text-brand" />,
+  },
+
   // Add more cards as needed...
 ];
 
